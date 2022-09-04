@@ -11,11 +11,12 @@ class Book {
         this.favorite = favorite;
         this.fileCover = fileCover;
         this.fileName = fileName;
+        this.fileBook = "";
     }
 }
 module.exports.Book = Book;
 
-let data_obj = {
+const data_obj = {
     books: []
 };
 module.exports.data_obj = data_obj;
