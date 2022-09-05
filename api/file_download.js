@@ -15,7 +15,7 @@ router.get('/:id/download',
             const file_name = data_obj.books[idx].fileBook;
             const file_path = './' + file_name;               // Переходим в родительскую директорию
 
-            res.download(file_path);
+            res.download(file_path, data_obj.books[idx].fileName);
 
         } else {
             res.status(404);

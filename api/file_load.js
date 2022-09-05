@@ -10,7 +10,7 @@ router.post('/upload/:id',
     my_multer.single('file'),       // Название POST параметра
     (req, res) => {
         if(req.file){
-//            const {path, filename} = req.file;
+//            console.log(req.file);
 
             const {id} = req.params;
             const idx = data_obj.books.findIndex(el => el.id === id);
@@ -19,7 +19,8 @@ router.post('/upload/:id',
 
                 data_obj.books[idx] = {
                     ...data_obj.books[idx],
-                    fileBook: req.file.path
+                    fileBook: req.file.path,
+                    fileName: req.file.originalname
                 }
         
                 res.json({fileBook: req.file.path});
