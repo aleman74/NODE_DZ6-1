@@ -8,7 +8,7 @@ const {data_obj, Book} = require('../data/book');
 router.get('/', (req, res) => {
 //    res.json(data_obj.books);
 
-    res.render("book/list", {
+    res.render("book/index", {
         title: "Список книг",
         books: data_obj.books
     });    
