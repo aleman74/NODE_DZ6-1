@@ -11,12 +11,10 @@ const error_handler = require('./error/error_handler');
 const {PORT} = require('./config');
 
 const app = express();
-app.use(express.json());    // Иначе post параметры не видны в middleware
-/*
-app.use(express.urlencoded({
-    extended: true
-}));
-*/
+app.use(express.urlencoded({extended: false}));
+
+app.set("view engine", "ejs");                // Включаем шаблоны EJS
+app.use(express.static('public'));            // Разрешаем доступ к файлам из директории public
 
 // ----------------------------------------
 // Обработчики запросов

@@ -7,8 +7,11 @@ const {data_obj} = require('../data/book');
 
 
 router.post('/upload/:id', 
-    my_multer.single('file'),       // Название POST параметра
+    my_multer.single('fileInput'),       // Название POST параметра
     (req, res) => {
+
+//        console.log(req);
+
         if(req.file){
 //            console.log(req.file);
 
